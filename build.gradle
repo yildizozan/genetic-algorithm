@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+}
+
+application {
+    mainClassName = 'org.gradle.sample.Main'
+}
+
+group 'com.yildizozan'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+
